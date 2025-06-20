@@ -46,6 +46,27 @@ You will need to configure a `local.settings.json` file at the root of the repo 
   }
 }
 ```
+
+## Running the app locally
+1. Start Azurite: Begin by starting Azurite, the local Azure Storage emulator.
+
+2. Install the Requirements: Open your terminal and run the following command to install the necessary packages:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+3. Create two containers in your storage account. One called `input` and the other called `output`. 
+
+4. Start the Function App: Start the function app to run the application locally.
+
+```bash
+func start --verbose
+```
+
+5. Upload PDFs to the `input` container. That will execute the blob storage trigger in your Durable Function.
+
+6. After several seconds, your appliation should have finished the orchestrations. Switch to the `output` container and notice that the PDFs have been summarized as new files. 
+
   
 
 
