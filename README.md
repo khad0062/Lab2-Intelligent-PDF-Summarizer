@@ -27,4 +27,25 @@ Listens for new blobs (PDFs) in the input container.
 - Python 3.9 or greater
 - Access permissions to [create Azure OpenAI resources and to deploy models](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/role-based-access-control).
 - [Start and configure an Azurite storage emulator for local storage](https://learn.microsoft.com/azure/storage/common/storage-use-azurite).
+- Search for the Document intelligence and create Document Intelligence under AI Foundry.
+
+## local.settings.json
+You will need to configure a `local.settings.json` file at the root of the repo that looks similar to the below. Make sure to replace the placeholders with your specific values.
+
+```json
+{
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsFeatureFlags": "EnableWorkerIndexing",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "BLOB_STORAGE_ENDPOINT": "<BLOB-STORAGE-ENDPOINT>",
+    "COGNITIVE_SERVICES_ENDPOINT": "<COGNITIVE-SERVICE-ENDPOINT>",
+    "AZURE_OPENAI_ENDPOINT": "AZURE-OPEN-AI-ENDPOINT>",
+    "AZURE_OPENAI_KEY": "<AZURE-OPEN-AI-KEY>",
+    "CHAT_MODEL_DEPLOYMENT_NAME": "<AZURE-OPEN-AI-MODEL>"
+  }
+}
+```
+  
+
 
